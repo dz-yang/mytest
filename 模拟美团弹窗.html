@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模拟美团弹窗</title>
+    <style>
+        body {
+            background-color: #fff;
+        }
+        
+        .container {
+            display: none;
+            margin-top: 50px;
+            position: relative;
+            left: 50%;
+            width: 80%;
+            transform: translate(-50%);
+        }
+        
+        .content {
+            padding: 10px;
+            border-radius: 15px;
+            background-color: #fff;
+        }
+        
+        .title {
+            /* 标题 */
+            font-size: 16px;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        .item_title {
+            /* 项标题 */
+            margin: 5px 0;
+        }
+        
+        .select {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 12px;
+        }
+        
+        .active {
+            border: 1px solid orange;
+            color: orange;
+            opacity: 0.5;
+        }
+        
+        .select_item {
+            /* 选择项 */
+            padding: 10px;
+            height: 25px;
+            /* line-height: 30px; */
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        
+        .btn {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 1px solid #fff;
+            font-size: 20px;
+            margin-top: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 点击提示弹窗 -->
+    <button id="open">选规格</button>
+    <!-- 弹窗内容 -->
+    <div class="container">
+        <!-- 主体内容-->
+        <div class="content">
+            <!-- 标题 -->
+            <div class="title">黑椒汁脆皮鸡排套餐</div>
+            <!-- 每一项 -->
+            <div class="item">
+                <!-- 项标题 -->
+                <div class="item_title">规格</div>
+                <!-- 选择 -->
+                <div class="select">
+                    <!-- 选择项 -->
+                    <div class="select_item active">(一人份)</div>
+                    <div class="select_item">(两人份)</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item_title ">汤饮类</div>
+                <div class="select">
+                    <div class="select_item active">茶树菇鸡汤</div>
+                    <div class="select_item">无花果雪梨润肺汤</div>
+                    <div class="select_item">雀巢橙真</div>
+                    <div class="select_item">经典奶茶</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item_title">配菜</div>
+                <div class="select">
+                    <div class="select_item active">腌萝卜</div>
+                    <div class="select_item">荷包蛋</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 关闭按钮 -->
+        <button class="btn" id="close">X</button>
+    </div>
+</body>
+
+</html>
+<script>
+    window.onload = function() {
+        var body = document.querySelector('body') // body节点
+        var open = document.getElementById('open') //点击按钮
+        var close = document.querySelector('#close') //关闭按钮
+        var container = document.querySelector('.container') //弹窗节点
+        var select_item = document.querySelectorAll('.select_item') //所有选项
+        var msg = document.querySelector('.msg')
+
+        // 点击显示弹窗
+        open.onclick = function() {
+            body.style.backgroundColor = 'rgba(0, 0, 0, .5)' // 设置body 颜色
+            container.style.display = 'block' //显示弹窗
+        }
+
+        //关闭弹窗
+        close.onclick = function() {
+            body.style.backgroundColor = '#fff'
+            container.style.display = 'none'
+        }
+
+        // 选择
+        for (var i = 0; i < select_item.length; i++) {
+            select_item[i].onclick = function() {
+                var ziNode = this.parentNode.children
+                for (var j = 0; j < ziNode.length; j++) {
+                    ziNode[j].classList.remove('active')
+                    this.classList.add('active')
+                }
+            }
+        }
+    }
+</script>
+</script>
