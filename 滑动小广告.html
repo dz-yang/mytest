@@ -18,24 +18,29 @@
             width: 50px;
             bottom: 100px;
             right: 0;
+            
         }
 
         @-webkit-keyframes myfirst {
             from {
                 right: 30px;
                 opacity: 1;
+                display: block;
                 
             }
 
             to {
-               opacity: 0;
+               
                display: none;
-               transform:rotate(90deg)
+               transform:rotate(360deg);
+              
+               
             }
         }
 
        .huadong{
         -webkit-animation: myfirst 5s;
+        -webkit-animation-iteration-count:3;
        }
        .img:hover{
             animation-play-state: paused;
