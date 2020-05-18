@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body html {
+
+            height: 100%;
+            position: relative;
+        }
+
+        .img {
+          
+            position: fixed;
+            width: 50px;
+            bottom: 100px;
+            right: 0;
+        }
+
+        @-webkit-keyframes myfirst {
+            from {
+                right: 30px;
+                opacity: 1;
+                
+            }
+
+            to {
+               opacity: 0;
+               display: none;
+               transform:rotate(90deg)
+            }
+        }
+
+       .huadong{
+        -webkit-animation: myfirst 5s;
+       }
+       .img:hover{
+            animation-play-state: paused;
+       }
+        .img img {
+            width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div class="img">
+        <a href="#"><img src="img/hongbao.jpg" alt=""></a>
+    </div>
+</body>
+
+</html>
+<script>
+    window.onload = function () {
+        var img = document.querySelector('.img')
+        window.onmousedown = function () {
+            console.log('a');
+            
+            img.classList.add('huadong')
+        }
+        window.ondblclick = function(){
+            console.log('b');
+            
+            img.classList.remove('huadong')
+        }
+        
+    }
+</script>
