@@ -12,14 +12,8 @@
             position: relative;
         }
 
-        .img {
-          
-            position: fixed;
-            width: 50px;
-            bottom: 100px;
-            right: 0;
-            
-        }
+       
+        
 
         @-webkit-keyframes myfirst {
             from {
@@ -38,10 +32,18 @@
             }
         }
 
-       .huadong{
+        .img {
         -webkit-animation: myfirst 5s;
-        -webkit-animation-iteration-count:3;
-       }
+        -webkit-animation-direction:alternate;
+        -webkit-animation-iteration-count:infinite;
+            position: fixed;
+            width: 50px;
+            bottom: 100px;
+            right: 0;
+        }
+            
+        
+       
        .img:hover{
             animation-play-state: paused;
        }
@@ -49,71 +51,21 @@
             width: 100%;
 
         }
+        .img .close{
+            float: right;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(22, 22, 22, .5);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div>1111</div>
-    <div class="img">
+    <div class="img" >
+        <div class="close">X</div>
         <a href="#"><img src="img/hongbao.jpg" alt=""></a>
     </div>
 </body>
@@ -122,16 +74,17 @@
 <script>
     window.onload = function () {
         var img = document.querySelector('.img')
-        window.onmousedown = function () {
-            console.log('a');
-            
-            img.classList.add('huadong')
+        var close = document.querySelector('.close')
+        close.onclick = function(){
+            img.style.display = 'none'
         }
-        window.ondblclick = function(){
-            console.log('b');
-            
-            img.classList.remove('huadong')
-        }
+
+
+
+        
+        
+     
+        
         
     }
 </script>
