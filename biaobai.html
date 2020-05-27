@@ -7,11 +7,7 @@
     <title>Document</title>
     <style>
         .love {
-            -webkit-animation: myfirst 5s;
-            -webkit-animation-direction:alternate;
-            -webkit-animation-iteration-count:infinite;
-            left: 0;
-            top: 0;
+           
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -20,7 +16,18 @@
             padding: 50px;
 
         }
-
+        .set1{
+            transform: translate(300px,300px);
+            /* -webkit-animation: myfirst 5s;
+            -webkit-animation-direction:alternate;
+            -webkit-animation-iteration-count:infinite; */
+        }
+        .set2{
+            transform: translate(400px,400px);
+            -webkit-animation: myfirst 8s;
+            -webkit-animation-direction:alternate;
+            -webkit-animation-iteration-count:infinite;
+        }
         .yuan1 {
             position: absolute;
             left: 49px;
@@ -52,20 +59,23 @@
         }
 
         @keyframes myfirst {
-            from {
-                top: 0;
-                left: 0;
+            10% {
+                
                 transform: scale(0.5);
                 border: 20px solid orangered;
                 opacity: 1;
             }
 
-            to {
-                transform: scale(2);
-                top: 300px;
-                left: 300px;
+            50% {
+                transform: scale(1);
+               
                 border: 1px solid red;
                 opacity: 0;
+            }
+            100%{
+                transform: scale(0.1);
+               
+                opacity: 1;
             }
         }
 
@@ -77,16 +87,16 @@
             {
             from {
                 transform: scale(0.5);
-                top: 0;
-                left: 0;
+            
                 border: 20px solid orangered;
                 opacity: 1;
             }
 
             to {
-                transform: scale(2);
-                top: 300px;
-                left: 300px;
+                top: 110%;
+                
+                transform: scale(1);
+              transform: translate(500px,100px);
                 border: 1px solid red;
                 opacity: 0;
             }
@@ -95,7 +105,12 @@
 </head>
 
 <body>
-    <div class="love ">
+    <div class="love set1">
+        <div class="yuan1"></div>
+        <div class="yuan2"></div>
+        <div class="zheng"></div>
+    </div>
+    <div class="love set2">
         <div class="yuan1"></div>
         <div class="yuan2"></div>
         <div class="zheng"></div>
